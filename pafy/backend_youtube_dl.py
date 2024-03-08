@@ -9,7 +9,7 @@ if sys.version_info[:2] >= (3, 0):
 else:
     uni = unicode
 
-import youtube_dl
+import yt_dlp as youtube_dl
 
 from . import g
 from .backend_shared import BasePafy, BaseStream, remux, get_status_string, get_size_done
@@ -50,7 +50,7 @@ class YtdlPafy(BasePafy):
         self._length = self._ydl_info['duration']
         self._viewcount = self._ydl_info['view_count']
         self._likes = self._ydl_info.get('like_count', 0)
-        self._dislikes = self._ydl_info.get('dislike_count', 0)
+        # self._dislikes = self._ydl_info.get('dislike_count', 0)
         self._username = self._ydl_info['uploader_id']
         self._category = self._ydl_info['categories'][0] if self._ydl_info['categories'] else ''
         self._bestthumb = self._ydl_info['thumbnails'][0]['url']
@@ -103,7 +103,7 @@ class YtdlStream(BaseStream):
             self._mediatype = 'normal'
 
         self._threed = info.get('format_note') == '3D'
-        self._rawbitrate = info.get('abr', 0) * 1024
+        self._rawbitrate = 0 # info.get('abr', 0) * 1024
 
         height = info.get('height') or 0
         width = info.get('width') or 0
