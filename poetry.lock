@@ -521,5 +521,5 @@ websockets = ">=12.0"
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.10"
-content-hash = "82c3833dc804a540e57dd38d7c7111229d4046b896f3f1f1fc427a0a4f4eff25"
+python-versions = ">=3.10,<3.13"
+content-hash = "9f8b7a351d0571c1be3075f7b8215859afcb77e483acd523c982234608d5ebe1"
