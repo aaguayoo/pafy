@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
 yt-dlp = "2023.12.30"
+youtube-dl = "2021.12.17"
 
 [build-system]
 requires = ["poetry-core"]
